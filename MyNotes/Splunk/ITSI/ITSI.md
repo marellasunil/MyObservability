@@ -7,6 +7,26 @@
 - <b>Deep Dive </b> are used to investigate performance probles and identify anomalies. <br>
 - <b>Correlation searches</b> are used to alert unkown combination of KPI results.<br>
 
+<h2>ITSI Preperation</h2>
+<ol>
+<li>Define Goals & Objectives</li>
+<li>Define Scope</li>
+<li>Creative service Decomposition</li>
+<li>Define KPI's</li>
+<li>Define Thresholds</li>
+<li>Identify Data sources</li>
+<li>Onboard missing data</li>
+</ol>
+------ITSI Read-------
+<ol>
+<li>Create Services & Dependencies</li>
+<li>Create KPI's & Tune Thresholds</li>
+<li>Create Deep Dives</li>
+<li>Create Glasstables</li>
+<li>Create Multi-KPI alerts</li>
+<li>Gain insights & show value</li>
+</ol>
+
 <h2> Services</h2>
 You define <b>Services</b> which can analyse. Services is collection of IT objects that relates to your business goals.
 <ol>
@@ -28,24 +48,16 @@ Services can be High-level or low-level, tangible (Ex storage tier), Abstract, o
     - Call center monitoring
     - Transaction troubleshooting.
 
-<img="ITSI.jpg">
+<img srcs="ITSI.jpg">
 
-<h2>ITSI Preperation</h2>
+
+<h2>Roles</h2>
+
 <ol>
-<li>Define Goals & Objectives</li>
-<li>Define Scope</li>
-<li>Creative service Decomposition</li>
-<li>Define KPI's</li>
-<li>Define Thresholds</li>
-<li>Identify Data sources</li>
-<li>Onboard missing data</li>
+<li><b>itoa_user:</b> View most of ITSI, create private glass tables or deep dives </li>
+<li><b>itoa_analyst:</b> itoa_user + own notable events</li>
+<li><b>itoa_team_admin:</b> itoa_analyst, create shared services, KPI's  entities for the team</li>
+<li><b>itoa_admin:</b>itoa_team_analyst + bulk imports entities/services, read/write/delete backup and restores</li>
 </ol>
-------ITSI Read-------
-<ol>
-<li>Create Services & Dependencies</li>
-<li>Create KPI's & Tune Thresholds</li>
-<li>Create Deep Dives</li>
-<li>Create Glasstables</li>
-<li>Create Multi-KPI alerts</li>
-<li>Gain insights & show value</li>
-</ol>
+
+Additional roles can be created as needed.
