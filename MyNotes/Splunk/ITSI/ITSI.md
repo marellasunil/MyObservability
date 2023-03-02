@@ -48,7 +48,7 @@ Services can be High-level or low-level, tangible (Ex storage tier), Abstract, o
     - Call center monitoring
     - Transaction troubleshooting.
 
-<img srcs="ITSI.jpg">
+<img src="ITSI.jpg">
 
 
 <h2>Roles</h2>
@@ -61,3 +61,6 @@ Services can be High-level or low-level, tangible (Ex storage tier), Abstract, o
 </ol>
 
 Additional roles can be created as needed.
+
+<h2>ITSI User Interface</h2>
+<img src="ITSI-2.jpg">
