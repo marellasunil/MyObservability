@@ -50,7 +50,6 @@ Services can be High-level or low-level, tangible (Ex storage tier), Abstract, o
 
 <img src="ITSI.jpg">
 
-
 <h2>Roles</h2>
 
 <ol>
@@ -64,3 +63,21 @@ Additional roles can be created as needed.
 
 <h2>ITSI User Interface</h2>
 <img src="ITSI-2.jpg">
+
+<b>Service Analyser:</b> Monitor overall services and KPI status.
+<b>Episode Review:</b> Investigate issues.
+<b>Glass Tables:</b> Visualisation tools for monitoring services.
+<b>Deep Dives:</b> Identify & troibleshoot issues.
+<b>Multi KPI Alerts: </b> (Admin) Searched create notable events by KPI Status.
+<b>Dashboards:</b>Reports, dashboards, pivots and ad-hoc searche tools.
+
+<h2>Notes:</h2>
+    - Splunk ITSI is not compatible on search heads with Splunk Security installed.
+    - ITSI often requires an increase of hardware resources above base splunk requirements.
+    - The number of KPI's & entities will increase the number of indexers required.
+    - Primary capacity factors to consider: Avg KPI run time, frequence of KPI searches, no of entities used in KPI searches.
+    - Deployment capacity:
+    <code>index=_introspection sourcetype=splunk_resource_usage component=Hostwide earliest=-5m | timechart avg(data.cpu_user_pct) by host</code>
+    if it takes more than 5secs to complete, it can indicate that your current deployment hardware configuration will cause ITSI to under-performe.
+    - Ensure Java is installed on search heads: Required for anomaly detection and event management
+    - Predictive Analytics requires the Splunk Machine Learning Toolkit
