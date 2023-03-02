@@ -50,6 +50,16 @@ Services can be High-level or low-level, tangible (Ex storage tier), Abstract, o
 
 <img src="ITSI.jpg">
 
+<h2>ITSI User Interface</h2>
+<img src="ITSI-2.jpg">
+
+<b>Service Analyser:</b> Monitor overall services and KPI status.<br>
+<b>Episode Review:</b> Investigate issues.<br>
+<b>Glass Tables:</b> Visualisation tools for monitoring services.<br>
+<b>Deep Dives:</b> Identify & troibleshoot issues.<br>
+<b>Multi KPI Alerts: </b> (Admin) Searched create notable events by KPI Status.<br>
+<b>Dashboards:</b>Reports, dashboards, pivots and ad-hoc searche tools.<br>
+
 <h2>Roles</h2>
 
 <ol>
@@ -61,23 +71,57 @@ Services can be High-level or low-level, tangible (Ex storage tier), Abstract, o
 
 Additional roles can be created as needed.
 
-<h2>ITSI User Interface</h2>
-<img src="ITSI-2.jpg">
+<h2>ITSI App components</h2>
+Component location - Search heads<br>
+    DA-ITSI-APPSERVER : Domain add-ons Modules<br>
+    DA-ITSI-DATABASE : Domain add-ons Modules<br>
+    DA-ITSI-EUEM : Domain add-ons Modules<br>
+    DA-ITSI-LB : Domain add-ons Modules<br>
+    DA-ITSI-OS : Domain add-ons Modules<br>
+    DA-ITSI-STORAGE : Domain add-ons Modules<br>
+    DA-ITSI-VIRTUALIZATION : Domain add-ons Modules<br>
+    DA-ITSI-WEBSERVER : Domain add-ons Modules<br>
+    SA-ITOA: Entity and service management<br>
+    SA-ITSI-ATAD: Adaptive threshold management<br>
+    SA-ITSI-CustomModuleViz: Custom visualization files<br>
+    SA-ITSI-MetricAD: Anomaly detection tools and services<br>
 
-<b>Service Analyser:</b> Monitor overall services and KPI status.
-<b>Episode Review:</b> Investigate issues.
-<b>Glass Tables:</b> Visualisation tools for monitoring services.
-<b>Deep Dives:</b> Identify & troibleshoot issues.
-<b>Multi KPI Alerts: </b> (Admin) Searched create notable events by KPI Status.
-<b>Dashboards:</b>Reports, dashboards, pivots and ad-hoc searche tools.
+Component location - Search heads, License Master<br>
+    SA-ITSI-Licensechecker: Validate ITSI licenses<br>
+    SA-ITOA<br>
+    SA-UserAccess: ITSI access control tools<br>
+
+Component location - Search heads, Indexers<br>
+    SA-IndexCreation: ITSI summary index configurations<br>
+
+<h2>ITSI Indexes</h2>
+Created on indexers by SA-IndexCreation<br>
+<br>
+anomaly_detection : AD alert storage<br>
+itsi_grouped_alerts : Metadata for incident review<br>
+itsi_notable_archive : Old incident review data<br>
+itsi_notable_audit : Incident review management<br>
+itsi_summary : KPI storage<br>
+itsi_tracked_alerts : Incident review alert data<br>
+snmptrapd : SNMP correlation search data<br>
+
+<h2>ITSI Apps Installation Procedure</h2>
+<ol>
+<li>Extract apps in etc/apps. If it is SH Cluster, etc/shcluster/apps</li>
+<li>Copy SA-IndexCreation to the indexers</li>
+<li>Copy SA-ITSI-Licensechecker, SA-ITOA and SA-UserAccess to the license master</li>
+<li>if it is SH Cluster, <code>splunk apply shcluster-bundle</code></li>
+<li>Restart Splunk on all servers. Rolling restart if it is SH Cluster</li>
+</ol>
+Note: Remove SA-ITSI-Licensechecker from non-license master servers
 
 <h2>Notes:</h2>
-    - Splunk ITSI is not compatible on search heads with Splunk Security installed.
-    - ITSI often requires an increase of hardware resources above base splunk requirements.
-    - The number of KPI's & entities will increase the number of indexers required.
-    - Primary capacity factors to consider: Avg KPI run time, frequence of KPI searches, no of entities used in KPI searches.
-    - Deployment capacity:
-    <code>index=_introspection sourcetype=splunk_resource_usage component=Hostwide earliest=-5m | timechart avg(data.cpu_user_pct) by host</code>
-    if it takes more than 5secs to complete, it can indicate that your current deployment hardware configuration will cause ITSI to under-performe.
-    - Ensure Java is installed on search heads: Required for anomaly detection and event management
-    - Predictive Analytics requires the Splunk Machine Learning Toolkit
+    - Splunk ITSI is not compatible on search heads with Splunk Security installed.<br>
+    - ITSI often requires an increase of hardware resources above base splunk requirements.<br>
+    - The number of KPI's & entities will increase the number of indexers required.<br>
+    - Primary capacity factors to consider: Avg KPI run time, frequence of KPI searches, no of entities used in KPI searches.<br>
+    - Deployment capacity:<br>
+    <code>index=_introspection sourcetype=splunk_resource_usage component=Hostwide earliest=-5m | timechart avg(data.cpu_user_pct) by host</code><br>
+    if it takes more than 5secs to complete, it can indicate that your current deployment hardware configuration will cause ITSI to under-performe.<br>
+    - Ensure Java is installed on search heads: Required for anomaly detection and event management<br>
+    - Predictive Analytics requires the Splunk Machine Learning Toolkit<br>
