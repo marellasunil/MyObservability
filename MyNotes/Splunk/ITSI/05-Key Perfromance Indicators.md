@@ -1,5 +1,6 @@
 # Key Performance Indicators
 
+<h2>Introduction</h2>
 For each service, define the KPIs that determine how well the service is performing.<br>
 A KPI is a numeric measurement of a specific quantity that relates to the service’s function.<br>
 For business services, KPIs are often measurements of targets or goals –Sales, quality, transactions, etc.<br>
@@ -32,3 +33,5 @@ For technical services, KPIs are usually metrics about devices or processes – 
 <li>Memory free</li>
 <li>Storage free space</li>
 </ul>
+
+<h2> KPI Components</h2>
