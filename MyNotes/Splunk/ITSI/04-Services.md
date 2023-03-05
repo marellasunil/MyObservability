@@ -47,3 +47,34 @@ second service, they should be moved into a supporting service<br>
 - Don’t get too focused on low-level services<br>
 - Define a small number of key services first<br>
 - Iteratively add more detail to your service descriptions and more services<br>
+
+# Permission
+- Services are owned by teams. <br>
+- There is one default global team which contains all ITSI users, so by default all users can use any service. <br>
+- If needed, you can create new teams and use them to restrict access to some services.<br>
+- Each team has an administrative role assigned to it, inherited from itoa_team_admin. <br>
+
+# Service Dependency
+A service can depend on other services.
+The dependency can be on:
+- One or more KPIs in another service
+- The health score of another service
+
+# Service Templates
+- You may find that you have several discrete services that are identical in structure. <br>
+- You can design one service template as an abstract description of a type of service. <br>
+- Then you can implement new services from the template as needed.  <br>
+
+# Service Templets: Maintanance
+- Any changes to a service templet can be easily propagated to children services.
+    1. This provides a mechanism to do bulk updates on related services
+    2. Updates can be pushed out immediately or on a schedule
+- Child services can be customized.
+    1. Each child service designates its own rules for entities
+    2. KPIs can be added to child services in addition to the KPIs “inherited” from the template
+    3. Any child service can be disconnected from the parent template if needed.
+
+# KPI Schedule Synchronization
+- Normally, KPI searches are executed independently from each other in a staggered schedule to reduce search load.
+    - Ex: KPIAand B might both be scheduled for “every 5 minutes” but Amight go first, then B, depending on the scheduler load.
+- In some cases you might want all KPIs to always update at the same time. But it may cause significant performance impact. 
