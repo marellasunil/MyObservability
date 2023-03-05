@@ -44,24 +44,3 @@ snmptrapd : SNMP correlation search data<br>
 <li>Restart Splunk on all servers. Rolling restart if it is SH Cluster</li>
 </ol>
 Note: Remove SA-ITSI-Licensechecker from non-license master servers
-
-# ITSI Modules
-
-ITSImodules are Splunk apps. Check installed modules in the app manager (apps starting with
-DA-ITSI-…) or in ITSI Configure > Modules
-
-Initial ITSI configured with number of modules, contains pre-configured data models, base searches, KPIs, entity discovery searches & visualisations for a range of common service types like OS monitoring, App / web servers or Databases etc
-
-These can be used during service planning and definition to accelerate service implementation
-
-Ex: Operating system modules<br>
-
-- Use this module to quickly build KPIs that measure server metrics, like memory, CPU and storage status<br>
-- Depends on events coming from add-ons like Splunk_TA_nix, etc.<br>
-- Inventory events from OS sources like *:Version are used to detect and add hosts as entities automatically<br>
-- Provides the OS Host Details dashboard to inspect detailed status about devices in your environment<br>
-
-<h2>Configuring Modules</h2>
-Some modules have configuration requirements like the Operating System Module can  automatically import entities based on information from the nix and windows add-ons, but needs to know what indexes store the relevant events.<br>
-<br>
-Edit the <b>itsi_os_module_indexes</b> macro in the module to add the name(s) of the indexes that should be searched for entities.<br>

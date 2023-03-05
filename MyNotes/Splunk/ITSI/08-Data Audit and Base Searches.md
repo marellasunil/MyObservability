@@ -38,3 +38,6 @@
 - Use shortest time span possible (Smaller results search = less resource use).
 
 # <code>fieldsummary</code> command
+- Examine this source type with fieldsummary.
+- The <code>fieldsummary</code> command calculates summary statistics for one or more fields in your events. The summary information is displayed as a results table.
+- The fieldsummary command calculates summary statistics, such as the count, maximum value, minimum value, mean, and standard deviation for the fields in your search results. 
