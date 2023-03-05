@@ -64,18 +64,3 @@ Example: the customer may say that “purchases are twice as important as other 
 Thresholds are how ITSI converts a KPI’s numeric value into a status.<br>
 Normal is “good”, critical is “bad”, with low, medium and high in between. <br>
 
-# Permission
-- Services are owned by teams. <br>
-- There is one default global team which contains all ITSI users, so by default all users can use any service. <br>
-- If needed, you can create new teams and use them to restrict access to some services.<br>
-- Each team has an administrative role assigned to it, inherited from itoa_team_admin. <br>
-
-# Dependency 
-- A service can depend on other services. <br>
-- Dependency can be one or more KPIs in another service. The health score of another services. <br>
-- During design, periodically examine your services. <br>
-
-# Service Templates
-- You may find that you have several discrete services that are identical in structure. <br>
-- You can design one service template as an abstract description of a type of service. <br>
-- Then you can implement new services from the template as needed.  <br>
