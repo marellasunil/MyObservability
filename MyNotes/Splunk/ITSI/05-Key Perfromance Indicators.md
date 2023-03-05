@@ -36,6 +36,15 @@ For technical services, KPIs are usually metrics about devices or processes – 
 
 <h2> KPI Components</h2>
 
+# Summary 
+- Identify the service name and description
+- For each KPI in the service, document its name, description, and:
+    - Time span, update frequency and synchronization requirements
+    - Entities? Split by entity?
+    - Importance to the service health score
+    - Threshold type: high, low or mid normal
+- Identify team ownership, service templates, and service dependencies
+
 # KPI Components
 
 KPI gets its alert value (Alert_value) from: selected set of events, Calculatuions applied to field in the section, schedule, entity split settings. <br>
