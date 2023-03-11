@@ -41,3 +41,11 @@
 - Examine this source type with fieldsummary.
 - The <code>fieldsummary</code> command calculates summary statistics for one or more fields in your events. The summary information is displayed as a results table.
 - The fieldsummary command calculates summary statistics, such as the count, maximum value, minimum value, mean, and standard deviation for the fields in your search results. 
+
+# Implementing searches
+- You can create new KPIs in one of the two ways
+    - Directly embed the selection, calculation, window and entity definitions into each KPI as you create them, or:
+    - Define base searches that identify the selection, calculation, etc. first, and then use those when defining KPIs
+
+# Base Searches
+- If you have multiple KPIs that share a common source and schedule, you can combine them into base searches.
